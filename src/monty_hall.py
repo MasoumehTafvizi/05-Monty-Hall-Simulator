@@ -34,11 +34,11 @@ def simulate_game(num_games: int) -> Tuple[float, float]:
     num_wins_without_switching = sum(monty_hall_game(False) for _ in range(num_games))
     num_wins_with_switching = sum(monty_hall_game(True) for _ in range(num_games))
     
-    return num_wins_without_switching/num_games, num_wins_with_switching/num_games
+    return num_wins_without_switching, num_wins_with_switching
 
 
 if __name__ == '__main__':
     num_games = 10000
     num_wins_without_switching,num_wins_with_switching = simulate_game(num_games)
-    print(f"Winning probability without switching: {num_wins_without_switching:.2%}")
-    print(f"Winning probability with switching: {num_wins_with_switching:.2%}")
+    print(f"Winning probability without switching: {num_wins_without_switching/num_games:.2%}")
+    print(f"Winning probability with switching: {num_wins_with_switching/num_games:.2%}")
